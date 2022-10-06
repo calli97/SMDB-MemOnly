@@ -24,7 +24,6 @@ titlePersistance.getTitleFullData=(tconst,idUser=null)=>{
         throw new Error('Title Not Found')
     }else{
         let title=new Title(aux[0].tconst,aux[0].primaryTitle,aux[0].originalTitle,aux[0].type,aux[0].duration,aux[0].startYear,aux[0].endYear,aux[0].isAdult,aux[0].genres)
-        console.log(title)
         title.addScore(ratingsPersistance.getTitleRating(tconst))
         title.addCrew(crewPersistance.getCrew(tconst))
         title.addPrincipals(principalPersistance.getPrincipalsForTitle(tconst))
